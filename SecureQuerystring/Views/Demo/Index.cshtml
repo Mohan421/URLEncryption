@@ -1,0 +1,19 @@
+﻿@using SecureQuerystring.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<input type="button" id="btnClick" value="Create Temper proof URL" onclick="fclick()"/>
+
+<script type="text/javascript">
+    function fclick() {
+        debugger;
+        //var url = '/Demo/Demo?id=58';
+        var str = '@CustomURLHelper.CreateTamperProofURL("/Demo/Demo",string.Empty,"id=58")'
+       url= str.replace("&amp;", "&");
+
+       $(location).attr('href', url)
+    };
+    </script>
